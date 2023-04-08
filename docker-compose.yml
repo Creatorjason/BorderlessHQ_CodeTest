@@ -1,0 +1,19 @@
+version: '3'
+services:
+  myapp:
+    build: .
+    ports:
+      - "9091:9091"
+    depends_on:
+      - mongo
+      - nats
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+
+  nats:
+    image: nats
+    ports:
+      - "4222:4222"

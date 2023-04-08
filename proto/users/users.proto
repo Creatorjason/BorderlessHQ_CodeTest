@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+option go_package = "./proto";
+
+package users;
+
+// import "proto/wallet/wallet.proto";
+
+message User {
+  int32 id = 1;
+  string firstName = 2;
+  string lastName = 3;
+}
+message UserWithWallet {
+  User user = 1;
+  Wallet wallet = 2;
+}
+message SeedUsersEvent {
+  int32 id = 1;
+  string name = 2;
+  repeated User data = 3;
+}
+// Added this here, having issues with imports
+message Wallet {
+  int32 id = 1;
+  int32 balance = 2;
+  string currency = 3;
+  int32 userId = 4;
+}
+
+
+message NoParams{}
+
+message UserList {
+    repeated UserWithWallet usersWithWallet  = 1;
+}
+
+
+
+
+service UserService {
+  rpc SeedUsers(SeedUsersEvent) returns (NoParams);
+  rpc ListUsers(NoParams) returns (UserList);
+}
+
+
+
