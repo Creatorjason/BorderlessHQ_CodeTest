@@ -1,6 +1,6 @@
 version: '3'
 services:
-  borderlessHQ_service:
+  myapp:
     build: .
     ports:
       - "9091:9091"
