@@ -13,8 +13,6 @@ This is the solution to the code test from BorderlessHQ .
 
 2. Make sure you have Docker and Docker Compose installed.
 
-3. Update the Golang application code to listen on the appropriate port (e.g., 9091) in the `main.go` file.
-
 4. Update the MongoDB and NATS connection configurations in the Golang application code, if necessary, to match the service names defined in the Docker Compose file (`mongo` and `nats`).
 
 5. Build the Docker containers using Docker Compose with the following command:
@@ -26,7 +24,7 @@ This is the solution to the code test from BorderlessHQ .
         
         docker-compose up
 
-7. Access the Golang microservice locally at `http://localhost:9091` in your web browser or through a REST client.
+7. Access the Golang microservice locally at `http://localhost:9091` from your IDE.
 
 8. Stop the Docker containers with the following command:
     
